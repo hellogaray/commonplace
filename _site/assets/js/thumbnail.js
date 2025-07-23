@@ -3,9 +3,64 @@ gsap.registerPlugin(ScrollTrigger, Flip);
 
 
 const isMobile = window.matchMedia("(max-width: 767px)").matches;
+const thumbnails = gsap.utils.toArray(".thumbnail");
+const filterButtons = document.querySelectorAll(".filter-by-rating");
+const filterByRatingButton = document.getElementById("filter-button");
+
+// ---------- Hover + 3D Tilt ----------
+thumbnails.forEach(el => {
+  // Hover 3D tilt
+  el.addEventListener("mousemove", e => {
+    const bounds = el.getBoundingClientRect();
+    const x = e.clientX - bounds.left;
+    const y = e.clientY - bounds.top;
+    const centerX = bounds.width / 2;
+    const centerY = bounds.height / 2;
+    const rotateX = ((y - centerY) / centerY) * 2;
+    const rotateY = ((x - centerX) / centerX) * 10;
+
+    gsap.to(el, {
+      rotationX: -rotateX,
+      rotationY: rotateY,
+      scale: 1.04,
+      duration: 0.3,
+      ease: "power2.out",
+      overwrite: "auto"
+    });
+  });
+
+  el.addEventListener("mouseleave", () => {
+    gsap.to(el, {
+      rotationX: 0,
+      rotationY: 0,
+      scale: 1,
+      duration: 0.5,
+      ease: "power3.out",
+      overwrite: "auto"
+    });
+  });
+
+  // Hover shadow & scale
+  el.addEventListener("mouseenter", () => {
+    gsap.to(el, {
+      boxShadow: "0 20px 40px var(--color-shadow);",
+      duration: 0.3,
+      ease: "power3.out",
+      overwrite: "auto"
+    });
+  });
+  el.addEventListener("mouseleave", () => {
+    gsap.to(el, {
+      boxShadow: "0 0 0 rgba(0,0,0,0)",
+      duration: 0.3,
+      ease: "power3.out",
+      overwrite: "auto"
+    });
+  });
+});
+
 
 // ---------- Hover Effect on Thumbnails ----------
-const thumbnails = document.querySelectorAll(".thumbnail");
 thumbnails.forEach(el => {
   el.addEventListener("mouseenter", () => {
     gsap.to(el, {
@@ -26,32 +81,49 @@ thumbnails.forEach(el => {
   });
 });
 
- // ---------- Scroll Animations ----------
-gsap.utils.toArray(".thumbnail").forEach(thumbnail => {
-  gsap.fromTo(
-    thumbnail,
-    { opacity: 0, y: 60, scale: 0.92, rotationX: 6, transformOrigin: "top center" },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      rotationX: 0,
-      duration: 0.7,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: thumbnail,
-        start: "top 90%",   // enters viewport from bottom
-        end: "bottom 10%",  // leaves viewport at top
-        scrub: true,
-        toggleActions: "play none none reverse",
+// ---------- Scroll Animations ----------
+function initScrollAnimations() {
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+  thumbnails.forEach(thumbnail => {
+    if (thumbnail.offsetParent === null) return; // Skip hidden elements
+
+    const currentY = parseFloat(getComputedStyle(thumbnail).transform.split(',')[5]) || 0;
+
+    gsap.fromTo(thumbnail,
+      {
+        opacity: 0,
+        y: currentY + 60,
+        scale: 0.92,
+        rotationX: 6,
+        rotationY: gsap.utils.random(-5, 5),
+        transformPerspective: 800,
+        transformOrigin: "top center",
+      },
+      {
+        opacity: 1,
+        y: currentY,
+        scale: 1,
+        rotationX: 0,
+        rotationY: 0,
+        ease: "power4.out",
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: thumbnail,
+          start: "top 90%",
+          end: "bottom 10%",
+          scrub: 0.5,
+        }
       }
-    }
-  );
-});
+    );
+  });
+}
+
+initScrollAnimations();
 
 
 // ---------- Filter  ----------
-const filterButtons = document.querySelectorAll(".filter-by-rating");
 const grid = document.getElementById("thumbnail-grid");
 
 filterButtons.forEach(button => {
@@ -86,38 +158,27 @@ filterButtons.forEach(button => {
 
   });
 });
+
+
 // ---------- Animation for Year Sorting ----------
 const filterByRating = document.getElementById('filter-button');
 
-if (!isMobile && filterByRating) {
-  // Timeline paused by default
+if (!isMobile) {
+  // Create a timeline paused by default
   const tl = gsap.timeline({ paused: true, reversed: true });
+  tl.to(".filter-by-rating", {
+    x: -40,
+    opacity: 1,
+    display: "inline-block",
+    duration: 0.6,
+    ease: "back.inOut(1.7)",
+    stagger: 0.1,
 
-  tl.fromTo(
-    ".filter-by-rating",
-    { x: 20, autoAlpha: 0 },
-    {
-      x: 0,
-      autoAlpha: 1,
-      duration: 0.6,
-      ease: "back.out(1.7)",
-      stagger: 0.1
-    }
-  );
+  });
 
-  // Toggle timeline on button click
   filterByRating.addEventListener("click", () => {
+    // Play or reverse depending on current state
     tl.reversed() ? tl.play() : tl.reverse();
     filterByRating.classList.toggle("active", !tl.reversed());
   });
-
-  // Optional: add hover scale effect for filter buttons
-  document.querySelectorAll(".filter-by-rating").forEach(btn => {
-    btn.addEventListener("mouseenter", () => {
-      gsap.to(btn, { scale: 1.05, duration: 0.2, ease: "power1.out" });
-    });
-    btn.addEventListener("mouseleave", () => {
-      gsap.to(btn, { scale: 1, duration: 0.2, ease: "power1.inOut" });
-    });
-  });
-}
+};
