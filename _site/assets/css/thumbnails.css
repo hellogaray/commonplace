@@ -146,7 +146,7 @@
 /* ========================================
    THUMBNAIL CARD STYLING
    ======================================== */
-.thumbnail__book_cover {
+.thumbnail__book-cover {
   display: block;
   width: 100%;
   height: 302px;
@@ -170,14 +170,14 @@
   box-shadow: 0 4px 8px var(--color-header-shadow);
 }
 
-.thumbnail__book_title {
+.thumbnail__book-title {
   font-size: 0.8rem;
   font-weight: 600;
   margin: 0;
   margin-bottom: -10px;
 }
 
-.thumbnail__book_author {
+.thumbnail__book-author {
   font-size: 0.7rem;
   margin: 0;
   opacity: 0.85;
@@ -394,7 +394,7 @@
     padding: 0;
   }
 
-  .thumbnail__book_cover {
+  .thumbnail__book-cover {
     display: block;
     height: 100%;
     object-fit: fill;
@@ -483,3 +483,22 @@
     opacity: 0;
   }
  }
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 768px) {
+  #thumbnail-layout { flex-direction: column; }
+  #page-info { max-width: 100%; padding: 4rem 1rem 1rem; position: inherit; text-align: center; margin: 0 auto; }
+  #thumbnail-section { max-width: 350px; align-self: center; }
+  .filter-by-rating { display: grid; grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr)); opacity: 1; margin: auto; gap: 2rem; }
+  .thumbnail__book-cover { height: 100%; object-fit: fill; margin: 0 auto; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px),
+       (min-width: 1024px) and (max-width: 1379px) {
+  #page-title { font-size: clamp(3rem, 6vw, 6vw); }
+  #filter-button { padding: 1rem 0.2rem; }
+  .filter-by-rating { padding: 1rem; }
+}
