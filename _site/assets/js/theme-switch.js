@@ -78,10 +78,10 @@ themeSwitch.addEventListener("click", () => {
 // ========================================
 // SUN RAY ROTATION ANIMATION
 // ========================================
-gsap.to("#sunRays", {
-  rotate: 360,
-  transformOrigin: "50% 50%",
-  repeat: -1,
-  duration: 20,
-  ease: "linear"
-});
+// gsap.to("#sunRays", {
+//   rotate: 360,
+//   transformOrigin: "50% 50%",
+//   repeat: -1,
+//   duration: 20,
+//   ease: "linear"
+// });

@@ -2,6 +2,7 @@ const infoIconEl = document.getElementById('infoIcon');
 const overlay = document.getElementById('overlay');
 const infoIconClose = document.getElementById('infoIcon-close');
 const overlayContent = document.querySelector('.overlay__content');
+const scrambleText = document.querySelector('.scramble');
 
 // Initial state
 gsap.set(overlay, { autoAlpha: 0 });
@@ -51,18 +52,25 @@ infoIconClose.addEventListener('click', () => {
 
 
 // ---------- Scramble Effects for links ----------
-document.querySelectorAll(".scramble").forEach(link => {
-  link.addEventListener("mouseenter", () => {
-    if (!gsap.isTweening(link)) {
-      gsap.to(link, {
+
+
+
+document.querySelectorAll(".scramble").forEach(el => {
+  const originalText = el.textContent; // store original text
+
+  // Hover in
+  el.addEventListener("mouseenter", () => {
+    if (!gsap.isTweening(el)) {
+      gsap.to(el, {
         duration: 1.5,
         scrambleText: {
-          text: link.textContent,
+          text: originalText,
           chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.<>?",
           speed: 0.8,
         }
       });
     }
   });
-});
 
+
+});
