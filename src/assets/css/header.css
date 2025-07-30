@@ -55,20 +55,21 @@ header {
 }
 
 /* Transition delays — default state */
-.logo__letters .char:nth-child(14) { transition-delay: 0.10s; }
-.logo__letters .char:nth-child(13) { transition-delay: 0.15s; }
-.logo__letters .char:nth-child(12) { transition-delay: 0.20s; }
-.logo__letters .char:nth-child(11) { transition-delay: 0.25s; }
-.logo__letters .char:nth-child(10) { transition-delay: 0.30s; }
-.logo__letters .char:nth-child(9)  { transition-delay: 0.35s; }
-.logo__letters .char:nth-child(8)  { transition-delay: 0.40s; }
-.logo__letters .char:nth-child(7)  { transition-delay: 0.45s; }
-.logo__letters .char:nth-child(6)  { transition-delay: 0.50s; }
-.logo__letters .char:nth-child(4)  { transition-delay: 0.55s; }
-.logo__letters .char:nth-child(3)  { transition-delay: 0.60s; }
-.logo__letters .char:nth-child(2)  { transition-delay: 0.65s; }
-.logo__letters .second_initial     { transition-delay: 0.70s; }
-
+.logo__letters .char:nth-child(16) { transition-delay: 0.10s; }
+.logo__letters .char:nth-child(15) { transition-delay: 0.15s; }
+.logo__letters .char:nth-child(14) { transition-delay: 0.20s; }
+.logo__letters .char:nth-child(13) { transition-delay: 0.25s; }
+.logo__letters .char:nth-child(12) { transition-delay: 0.30s; }
+.logo__letters .char:nth-child(11) { transition-delay: 0.35s; }
+.logo__letters .char:nth-child(10) { transition-delay: 0.40s; }
+.logo__letters .char:nth-child(9)  { transition-delay: 0.45s; }
+.logo__letters .char:nth-child(8)  { transition-delay: 0.50s; }
+.logo__letters .char:nth-child(7)  { transition-delay: 0.55s; }
+.logo__letters .char:nth-child(6)  { transition-delay: 0.60s; }
+.logo__letters .char:nth-child(4)  { transition-delay: 0.65s; }
+.logo__letters .char:nth-child(3)  { transition-delay: 0.70s; }
+.logo__letters .char:nth-child(2)  { transition-delay: 0.75s; }
+.logo__letters .second_initial     { transition-delay: 0.80s; }
 /* Transition delays — on hover */
 .logo__letters:hover .char:nth-child(2)  { transition-delay: 0.10s; }
 .logo__letters:hover .char:nth-child(3)  { transition-delay: 0.15s; }
@@ -82,6 +83,8 @@ header {
 .logo__letters:hover .char:nth-child(12) { transition-delay: 0.55s; }
 .logo__letters:hover .char:nth-child(13) { transition-delay: 0.60s; }
 .logo__letters:hover .char:nth-child(14) { transition-delay: 0.65s; }
+.logo__letters:hover .char:nth-child(15) { transition-delay: 0.70s; }
+.logo__letters:hover .char:nth-child(16) { transition-delay: 0.75s; }
 
 .logo__letters:hover .second_initial {
   transition-delay: 0s;
@@ -112,13 +115,6 @@ header {
   right: 1vw;
 } 
 
-#infoIcon-close {
-  text-transform: uppercase;
-  text-decoration: none;
-  display: none;
-  position: relative;
-  right: 3vw;
-}
 
 /* ========================================
    HEADER SECTION
