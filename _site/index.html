@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>『commonplace』  garden</title>
+        
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="/assets/css/global.css">
+
+        <!-- Component CSS -->
+        <link rel="stylesheet" href="/assets/css/header.css">
+        <link rel="stylesheet" href="/assets/css/theme-switch.css">
+        <link rel="stylesheet" href="/assets/css/thumbnails.css">
+        <link rel="stylesheet" href="/assets/css/book.css">
+        <link rel="stylesheet" href="/assets/css/footer.css">
+
+         <!-- Identity -->
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+         
+        <!-- GSAP -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+        <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+      </head>
+     <header>
+    <!-- Name Logo -->
+    <section class="header__logo">
+        <a href="/">
+            <div class="logo__letters">
+                <div class="letter first_initial">M</div>
+                <div class="letter char">'</div>
+                <div class="letter char">s</div>
+                <div class="letter char">&nbsp;</div>
+                <div class="letter second_initial">B</div>
+                <div class="letter char">o</div>
+                <div class="letter char">o</div>
+                <div class="letter char">k</div>
+                <div class="letter char">m</div>
+                <div class="letter char">a</div>
+                <div class="letter char">r</div>
+                <div class="letter char">k</div>
+                <div class="letter char">s</div>
+            </div> 
+        </a>
+    </section>
+    <section class="header__info-container-1">
+        <div id="infoIcon"> info </div>
+        <div id="infoIcon-close"> close </div>
+    </section>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+        <div class="overlay__content">
+            <div class="header__info-container-2"></div>
+            <span class="info__title">INFORMATION</span>
+            <div class="info__stack">
+                <p class="overlay__title">
+                    Stack
+                </p>
+                <p class="overlay__info">
+                    This site was built with the following stack. Each link directs you to free resources where you can read the documentation.
+                </p>
+                <ul class="overlay__stack">
+                    <li>Site Generator: 
+                        <a class="scramble" href="https://www.11ty.dev">11ty</a></li>
+                    <li>Frontend: 
+                            <a class="scramble" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content">HTML</a> and
+                            <a class="scramble" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">JavaScript</a>
+                        </li>
+                    <li>Animations: 
+                        <a class="scramble" href="https://www.w3schools.com/Css/">CSS</a> and 
+                        <a class="scramble" href="https://gsap.com/">GSAP</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="info__resources">
+                <p class="overlay__title">
+                    Coding Resources
+                </p>
+                <ul class="overlay__stack">
+                    <li><a class="scramble" href="https://www.w3schools.com/">W3Schools</a></li>
+                    <li><a class="scramble" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/">freeCodeCamp</a></li>
+                    <li><a class="scramble" href="https://developer.mozilla.org/en-US/">MDN Web Docs </a></li>
+                    <li><a class="scramble" href="www.youtube.com/watch?v=4wD00RT6d-g&list=PLwhCq3ZFGOGgZDg_pnVh15gUfYqWnlWRs">11ty Tutorial for Beginners by Kevin Powell </a></li>
+
+                </ul>
+            </div>
+            <div class="info__about">
+                <p class="overlay__title">
+                    Author
+                </p>
+                <p class="overlay__info">
+                    Created with love (and a bit of anxiety) by <a class="scramble" href="https://github.com/hellogaray/">hellogaray</a>.  
+                    Feel free to use it for personal purposes, contribute improvements, or ask questions via the <a class="scramble" href="https://github.com/hellogaray/bookmarks">GitHub repository</a>.
+                </p> 
+            </div>
+            <div class="info__copyrights">
+                <p class="overlay__title">
+                    Copyright
+                </p>
+                <p class="overlay__info">
+                    © Covers and quotes belong to their respective authors.  
+                    The source code is provided <a class="scramble" href="https://github.com/hellogaray/bookmarks">here</a> under the repository’s license.  
+                    Unauthorized commercial use is prohibited.                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <main>
+        <body data-page="home">
+    <div id="thumbnail-layout">
+    <div id="page-info">
+        <!-- Page Title and Description -->
+        <div id="page-title">garden</div>
+        <div id="page-description">
+            A quiet space where the books I&#39;ve read and the quotes that moved me take root and grow. This is a living archive — part memory, part reflection — where ideas are planted, connected, and allowed to evolve over time. Feel free to wander, explore, and revisit.
+        </div>
+    </div>
+
+    <div id="thumbnail-section">
+        <div id="search-bar"> 
+            <!-- Filter Button Trigger -->
+            <div id="filter-button">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7.833 2c-.507 0-.98.216-1.318.576A1.92 1.92 0 0 0 6 3.89V21a1 1 0 0 0 1.625.78L12 18.28l4.375 3.5A1 1 0 0 0 18 21V3.889c0-.481-.178-.954-.515-1.313A1.808 1.808 0 0 0 16.167 2H7.833Z"/>
+                </svg>
+                <span>Filter by Rating</span>
+            </div>
+
+            <!-- Rating Filters (initially hidden) -->
+            <div class="filter-by-rating" data-rating="all">Show All</div>
+            <div class="filter-by-rating" data-rating="5">5 Stars</div>
+            <div class="filter-by-rating" data-rating="4">4 Stars</div>
+            <div class="filter-by-rating" data-rating="3">3 Stars</div>
+            <div class="filter-by-rating" data-rating="2">2 Stars</div>
+            <div class="filter-by-rating" data-rating="1">1 Star</div>
+        </div>
+
+        <!-- Thumbnail -->
+        <ul id="thumbnail-grid" data-page="thumbnails"><li class="thumbnail" data-rating="5">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-girl-with-the-dragon-tattoo/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-girl-with-the-dragon-tattoo.jpg" alt="Book cover of The Girl With the Dragon Tattoo">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Girl With the Dragon Tattoo</h3>
+                            <span class="thumbnail__book_author">by Stieg Larsson</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    544
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status thumbnail__status--highlight" data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    5
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/holly/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/holly.jpg" alt="Book cover of Holly">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Holly</h3>
+                            <span class="thumbnail__book_author">by Stephen King</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    449
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/howl’s-moving-castle/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/howls-moving-castle.jpg" alt="Book cover of Howl’s Moving Castle">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Howl’s Moving Castle</h3>
+                            <span class="thumbnail__book_author">by Diana Wynne Jones</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    429
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/monstrilio/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/monstrilio.jpg" alt="Book cover of Monstrilio">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Monstrilio</h3>
+                            <span class="thumbnail__book_author">by Gerardo Sámano Córdova</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    336
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/my-fault/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/my-fault.jpg" alt="Book cover of My Fault">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">My Fault</h3>
+                            <span class="thumbnail__book_author">by Mercedes Ron</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    416
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/our-fault/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/our-fault.jpg" alt="Book cover of Our Fault">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Our Fault</h3>
+                            <span class="thumbnail__book_author">by Mercedes Ron</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    448
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-book-of-tea/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-book-of-tea.jpg" alt="Book cover of The Book of Tea">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Book of Tea</h3>
+                            <span class="thumbnail__book_author">by Kakuzo Okakura</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    160
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="4">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-girl-who-played-with-fire/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-girl-who-played-with-fire.jpg" alt="Book cover of The Girl Who Played with Fire">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Girl Who Played with Fire</h3>
+                            <span class="thumbnail__book_author">by Stieg Larsson</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    576
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    4
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-haunting-of-hill-house/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-haunting-of-hill-house.jpg" alt="Book cover of The Haunting of Hill House">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Haunting of Hill House</h3>
+                            <span class="thumbnail__book_author">by Shirley Jackson</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    208
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-turn-of-the-screw/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-turn-of-the-screw.jpg" alt="Book cover of The Turn of the Screw">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Turn of the Screw</h3>
+                            <span class="thumbnail__book_author">by Henry James</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    272
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-unhoneymooners/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-unhoneymooners.jpg" alt="Book cover of The Unhoneymooners">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Unhoneymooners</h3>
+                            <span class="thumbnail__book_author">by Christina Lauren</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    432
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-viscount-who-loved-me/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-viscount-who-loved-me.jpg" alt="Book cover of The Viscount Who Loved Me">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Viscount Who Loved Me</h3>
+                            <span class="thumbnail__book_author">by Julia Quinn</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    480
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/your-fault/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/your-fault.jpg" alt="Book cover of Your Fault">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Your Fault</h3>
+                            <span class="thumbnail__book_author">by Mercedes Ron</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    426
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-girl-on-the-train/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-girl-on-the-train.jpg" alt="Book cover of The Girl on the train">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Girl on the train</h3>
+                            <span class="thumbnail__book_author">by Paula Hawkins</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    395
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="4">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/remains-of-the-day/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/remains-of-the-day.jpg" alt="Book cover of Remains of the day">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Remains of the day</h3>
+                            <span class="thumbnail__book_author">by Kazuo Ishiguro</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    245
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    4
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/the-hating-game/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/the-hating-game.jpg" alt="Book cover of The Hating Game">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">The Hating Game</h3>
+                            <span class="thumbnail__book_author">by Sally Thorne</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    384
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="5">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/el-invencible-verano-de-liliana/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/el-invencible-verano-de-liliana.jpg" alt="Book cover of El invencible verano de Liliana">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">El invencible verano de Liliana</h3>
+                            <span class="thumbnail__book_author">by Cristina Rivera Garza</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    304
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status thumbnail__status--highlight" data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    5
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/castle-in-the-air/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/castle-in-the-air.jpg" alt="Book cover of Castle in the Air">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Castle in the Air</h3>
+                            <span class="thumbnail__book_author">by Diana Wynne Jones</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    288
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/book-lovers/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/book-lovers.jpg" alt="Book cover of Book Lovers">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Book Lovers</h3>
+                            <span class="thumbnail__book_author">by Emily Henry</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    446
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="4">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/under-the-bridge/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/under-the-bridge.jpg" alt="Book cover of Under The Bridge">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Under The Bridge</h3>
+                            <span class="thumbnail__book_author">by Rebecca Godfrey</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    480
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    4
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="4">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/verity/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/verity.jpg" alt="Book cover of Verity">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Verity</h3>
+                            <span class="thumbnail__book_author">by Colleen Hoover</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    331
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    4
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="5">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/never-let-me-go/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/never-let-me-go.jpg" alt="Book cover of Never Let Me Go">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Never Let Me Go</h3>
+                            <span class="thumbnail__book_author">by Kazuo Ishiguro</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    283
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status thumbnail__status--highlight" data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    5
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/a-rogue-of-ones-own/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/a-rogue-of-ones-own.jpg" alt="Book cover of A Rogue of One’s Own">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">A Rogue of One’s Own</h3>
+                            <span class="thumbnail__book_author">by Evie Dunmore</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    448
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/just-kids/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/just-kids.jpg" alt="Book cover of Just Kids">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Just Kids</h3>
+                            <span class="thumbnail__book_author">by Patti Smith</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    305
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/insomnia/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/insomnia.jpg" alt="Book cover of Insomnia">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Insomnia</h3>
+                            <span class="thumbnail__book_author">by Sarah Pinborough</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    320
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/earthlings/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/earthlings.jpg" alt="Book cover of Earthlings">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Earthlings</h3>
+                            <span class="thumbnail__book_author">by Sayaka Murata</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    340
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/better-than-the-movies/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/better-than-the-movies.jpg" alt="Book cover of Better Than the Movies">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Better Than the Movies</h3>
+                            <span class="thumbnail__book_author">by Lynn Painter</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    240
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/practical-magic/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/practical-magic.jpg" alt="Book cover of Practical magic">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Practical magic</h3>
+                            <span class="thumbnail__book_author">by Alice Hoffman</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    280
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="3">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/betwixt/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/betwixt.jpg" alt="Book cover of Betwixt">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Betwixt</h3>
+                            <span class="thumbnail__book_author">by Darynda Jones</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    256
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    3
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/bewitched/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/bewitched.jpg" alt="Book cover of Bewitched">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Bewitched</h3>
+                            <span class="thumbnail__book_author">by Laura Thalassa</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    443
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="4">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/and-then-there-were-none/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/and-then-there-were-none.jpg" alt="Book cover of And Then There Were None">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">And Then There Were None</h3>
+                            <span class="thumbnail__book_author">by Agatha Christie</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    250
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    4
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li><li class="thumbnail" data-rating="2">
+                    <div class="thumbnail__content">
+                        
+                        <!-- Book Cover -->
+                        <a href="/books/beguiled/">
+                            <img class="thumbnail__book_cover" src="/assets/covers/beguiled.jpg" alt="Book cover of Beguiled">
+                        </a>
+
+                            <div class="book__spine"></div>
+
+                        <!-- Book Info Overlay -->
+                        <div class="thumbnail__info">
+                            <h3 class="thumbnail__book_title">Beguiled</h3>
+                            <span class="thumbnail__book_author">by Darynda Jones</span>
+
+                            <!-- Book Status Tags -->
+                            <div class="thumbnail__statuses">
+
+                                <!-- Length -->
+                                <span class="thumbnail__status" data-label="Length">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                                    </svg>
+                                    372
+                                </span>
+
+                                <!-- Date Read -->
+                                <span class="thumbnail__status" data-label="Date Read">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                                    </svg>
+                                    2024
+                                </span>
+
+                                <!-- Rating -->
+                                <span class="thumbnail__status " data-label="Rating">
+                                    <svg class="thumbnail__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                                    </svg>
+                                    2
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li></ul>
+        
+        <!-- Pagination -->
+        <div id="thumbnail__pagination" role="navigation" aria-label="Thumbnail pagination">
+            
+            
+                <a href="/1/"
+                id="thumbnail__pagination-next"
+                aria-label="Next thumbnails"
+                title="Next thumbnails">
+                    <span aria-hidden="true">&gt;</span>
+                </a>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+    </main>
+                <footer>
+                <div id="theme-button">
+    <div id="theme-switch">
+        Lights On
+        <!-- <svg width="800px" height="800px" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <g>
+            <polygon 
+            id="sunRays" 
+            style="fill:#f3a20f;" 
+            stroke="#121212" 
+            stroke-width="5"
+            points="420,210 375.774,247.857 399.238,301.145 342.926,315.986 340.945,374.184 283.764,363.211 
+                    256.724,414.779 210,380 163.276,414.779 136.236,363.211 79.055,374.184 77.073,315.986 
+                    20.762,301.144 44.226,247.858 0,210 44.226,172.143 20.762,118.855 77.074,104.014 
+                    79.055,45.816 136.236,56.789 163.276,5.221 210,40 256.723,5.221 283.764,56.789 
+                    340.945,45.816 342.927,104.014 399.238,118.856 375.774,172.142"
+            />
+            <circle cx="210" cy="210" r="170" style="fill:white;" stroke="#121212" stroke-width="5" />
+            <circle cx="210" cy="210" r="150" style="fill:#f3a20f;" stroke="#121212" stroke-width="5"  />
+            <circle cx="180" cy="190" r="8" fill="black" />
+            <circle cx="240" cy="190" r="8" fill="black" />
+            <path d="M170,230 Q210,270 250,230" stroke="black" stroke-width="5" fill="transparent" />
+        </g>
+        </svg> -->
+  </div>
+</div>
+
+
+
+                <div class="footer__clock">--:--:--</div>
+            </footer> 
+        <script src="/assets/js/loader.js" defer></script>
+        <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+                });
+            }
+            });
+        }
+        </script>
+    </body>
+</html>

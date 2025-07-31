@@ -1,0 +1,84 @@
+ <header>
+    <!-- Name Logo -->
+    <section class="header__logo">
+        <a href="{{ '/' | url }}">
+            <div class="logo__letters">
+                <div class="letter first_initial">M</div>
+                <div class="letter char">'</div>
+                <div class="letter char">s</div>
+                <div class="letter char">&nbsp;</div>
+                <div class="letter second_initial">B</div>
+                <div class="letter char">o</div>
+                <div class="letter char">o</div>
+                <div class="letter char">k</div>
+                <div class="letter char">m</div>
+                <div class="letter char">a</div>
+                <div class="letter char">r</div>
+                <div class="letter char">k</div>
+                <div class="letter char">s</div>
+            </div> 
+        </a>
+    </section>
+    <section class="header__info-container-1">
+        <div id="infoIcon"> info </div>
+        <div id="infoIcon-close"> close </div>
+    </section>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+        <div class="overlay__content">
+            <div class="header__info-container-2"></div>
+            <span class="info__title">INFORMATION</span>
+            <div class="info__stack">
+                <p class="overlay__title">
+                    Stack
+                </p>
+                <p class="overlay__info">
+                    This site was built with the following stack. Each link directs you to free resources where you can read the documentation.
+                </p>
+                <ul class="overlay__stack">
+                    <li>Site Generator: 
+                        <a class="scramble" href="https://www.11ty.dev">11ty</a></li>
+                    <li>Frontend: 
+                            <a class="scramble" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content">HTML</a> and
+                            <a class="scramble" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">JavaScript</a>
+                        </li>
+                    <li>Animations: 
+                        <a class="scramble" href="https://www.w3schools.com/Css/">CSS</a> and 
+                        <a class="scramble" href="https://gsap.com/">GSAP</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="info__resources">
+                <p class="overlay__title">
+                    Coding Resources
+                </p>
+                <ul class="overlay__stack">
+                    <li><a class="scramble" href="https://www.w3schools.com/">W3Schools</a></li>
+                    <li><a class="scramble" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/">freeCodeCamp</a></li>
+                    <li><a class="scramble" href="https://developer.mozilla.org/en-US/">MDN Web Docs </a></li>
+                    <li><a class="scramble" href="www.youtube.com/watch?v=4wD00RT6d-g&list=PLwhCq3ZFGOGgZDg_pnVh15gUfYqWnlWRs">11ty Tutorial for Beginners by Kevin Powell </a></li>
+
+                </ul>
+            </div>
+            <div class="info__about">
+                <p class="overlay__title">
+                    Author
+                </p>
+                <p class="overlay__info">
+                    Created with love (and a bit of anxiety) by <a class="scramble" href="{{ site.github }}">{{ site.author }}</a>.  
+                    Feel free to use it for personal purposes, contribute improvements, or ask questions via the <a class="scramble" href="{{ site.repository }}">GitHub repository</a>.
+                </p> 
+            </div>
+            <div class="info__copyrights">
+                <p class="overlay__title">
+                    Copyright
+                </p>
+                <p class="overlay__info">
+                    © Covers and quotes belong to their respective authors.  
+                    The source code is provided <a class="scramble" href="{{ site.repository }}">here</a> under the repository’s license.  
+                    Unauthorized commercial use is prohibited.                </p>
+            </div>
+        </div>
+    </div>
+</header>

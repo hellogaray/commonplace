@@ -1,0 +1,257 @@
+.book-layout {
+  padding: 4em;
+  max-width: 1420px;
+  margin: auto;  
+  justify-content: center;
+}
+
+.book__info {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--color-border);
+  padding-right: 2em;  
+}
+
+.book__intro {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 200;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.book__cover {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: .6em;
+}
+
+.book__title {
+  font-family: var(--font-sorts-mill);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.book__author {
+  font-family: var(--font-sorts-mill);
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.book__cover-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.book__statuses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Each individual status */
+.book__status {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  background-color: var(--color-lighter);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  box-shadow: 0 1px 2px var(--color-shadow);
+  opacity: 0.6;
+  transform: translateY(4px);
+  transition: all 0.3s ease-in-out;
+}
+
+.book__status_rating {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  background-color: var(--color-lighter);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  opacity: 0.6;
+  transform: translateY(4px);
+  transition: all 0.3s ease-in-out;
+}
+
+.book__quotes {
+  align-self: center;
+}
+
+.book:hover .book__status, .book__status_rating {
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+.book__status:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  background-color: var(--color-lighter);
+  box-shadow: 0 2px 6px var(--color-shadow);
+}
+
+/* Tooltip */
+.book__status:hover[data-label]::after,
+.book__status_rating:hover[data-label]::after {
+  opacity: 1;
+  transform: translate(-50%, -0.5rem);
+}
+
+.book__status:hover::after,
+.book__status_rating:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0.25rem);
+  background: var(--color-tooltip);
+  color: var(--color-lighter);
+  padding: 4px 8px;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  opacity: 0;
+  border-radius: 4px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Icon inside the status */
+.book__icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+blockquote {
+  font-family: var(--font-sorts-mill), serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--dark-color);
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background-color: var(--color-lighter);
+  border-radius: 8px;
+  box-shadow: 0 6px 16px var(--color-shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+blockquote:hover {
+  background-color: var(--color-lighter);
+  border-left-color: var(--dark-color);
+  transform: scale(1.015);
+  box-shadow: 0 8px 20px var(--color-shadow);
+}
+
+blockquote::before {
+  content: "“";
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  color: var(--color-dark-muted);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+blockquote::after {
+  content: "”";
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  position: absolute;
+  bottom: -0.5rem;
+  right: 1rem;
+  color: var(--color-dark-muted);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.quote__page {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1.25rem;
+  font-size: 0.75rem;
+  font-family: var(--font-inter);
+  color: var(--color-dark-muted);
+  opacity: 0.7;
+  background-color: var(--color-lighter);
+  padding: 0 0.4em;
+  border-radius: 4px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Optional fade-in animation */
+@keyframes fadeInQuote {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+blockquote {
+  animation: fadeInQuote 0.6s ease-in-out both;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  .book-layout {
+    padding: 3rem;
+    max-width: 1420px;
+    margin: auto;  
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .book__info {
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    border-right: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .book__statuses {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .book__quotes {
+    padding: 0;
+    margin: 0;
+  }
+}

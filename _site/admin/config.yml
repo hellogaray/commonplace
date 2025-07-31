@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+# These lines should *not* be indented
+media_folder: "_site/assets/covers" # Media files will be stored in the repo under static/images/uploads
+public_folder: "" # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: "books"
+    label: "Books"
+    folder: "src/books"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", pattern: ['.{1,}', "Must have at least 1 characters"]} 
+      - { label: "Author", name: "author", widget: "string", pattern: ['.{1,}', "Must have at least 1 characters"]}
+      - { label: "Status", name: "status", widget: "select", options: ["Read", "Want To Read"], default: ["Read"]} 
+      - { label: "Image", name: "image", widget: "image"}
+      - { label: "Start Date", name: "start_date", widget: "datetime", date_format: "YYYY/MM/DD"}
+      - { label: "End Date", name: "end_date", widget: "datetime", date_format: "YYYY/MM/DD"}
+      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
+      - { label: "Length", name: "length", widget: "number", value_type: "int", min: 1}
+      - { label: "Own", name: "own", widget: "boolean", default: false }
+      - label: "Quotes"
+        name: "quotes"
+        widget: "list"
+        fields:
+          - { label: "Text", name: "text", widget: "text" }
+          - { label: "Page", name: "page", widget: "number" }

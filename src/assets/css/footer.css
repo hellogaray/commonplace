@@ -1,0 +1,28 @@
+/* ========================================
+  FOOTER SECTION
+  ======================================== */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+
+  /* Semi-transparent background */
+  background-color: rgba(var(--color-overlay-background), 0.9); /* adjust alpha for strength */
+
+  /* Only the background blurs what's behind it */
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px); /* for Safari */
+
+  /* Keep content sharp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__clock {
+  position: fixed;
+  bottom: 1rem;
+  right: 2vw;
+  z-index: 9999;
+}

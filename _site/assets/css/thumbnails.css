@@ -1,0 +1,485 @@
+/* ========================================
+   THUMBNAILS GRID
+   ======================================== */
+#thumbnail-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  align-items: flex-start;
+  margin: 2vw;
+}
+
+/* ========================================
+   PAGE INFO SECTION
+   ======================================== */
+
+#page-info {
+  flex: 1 1 25%;
+  top: 2vw;
+  max-width: 30%;
+  padding-right: 1vw;
+  position: sticky;
+  align-self: flex-start;
+}
+
+#page-title {
+  margin: 2vw 2vw 0 2vw;
+  font-family: var(--font-sorts-mill);
+  font-weight: 800;
+  font-weight: 400;
+  font-size: clamp(5.0rem, 6vw, 6vw);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+#page-description {
+  margin: 0 0 0 2vw;  
+  font-weight: 200;
+  text-align: justify;
+}
+
+/* ========================================
+   THUMBNAIL SECTION
+   ======================================== */
+#thumbnail-section {
+  flex: 1 1 75%;
+  max-width: 100%;
+  margin: 0;
+  padding-top: 0;
+}
+  
+#search-bar {
+  margin: 2vw 2vw 0 2vw;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  font-size: .8rem;
+  background-color: var(--color-lighter);
+  box-shadow: 0 1px 3px var(--color-header-shadow);
+  cursor: pointer;
+  margin-right: 2.5rem;
+}
+
+.filter-by-rating {
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  font-size: .8rem;
+  background-color: var(--color-lighter);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--color-header-shadow);
+  cursor: pointer;
+  user-select: none;
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.15s ease;
+  display: none;
+  opacity: 0; 
+}
+
+.filter-by-rating:hover,
+.filter-by-rating:focus {
+  background-color: var(--color-highlight);
+  color: var(--color-font-opposite);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.filter-by-rating.active {
+  background-color: var(--color-highlight);
+  color: var(--color-font-opposite);
+  transform: translateY(-3px);
+}
+
+.filter-by-rating:focus-visible {
+  outline: 2px solid var(--color-highlight);
+  outline-offset: 2px;
+}
+
+#filter-button::after {
+  content: "";
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.3s ease;
+}
+
+#filter-button:hover::after {
+  content: "→";
+  opacity: 0.6;
+  transform: translateX(4px);
+}
+
+/* ========================================
+   THUMBNAIL GRID STYLING
+   ======================================== */
+#thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.thumbnail {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: transparent;
+  margin: 2rem;
+}
+
+/* ========================================
+   THUMBNAIL CARD STYLING
+   ======================================== */
+.thumbnail__book_cover {
+  display: block;
+  width: 100%;
+  height: 302px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.thumbnail__info {
+  position: absolute;
+  border-radius: 8px;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0.5rem);
+  width: 80%;
+  background-color: var(--color-header);
+  padding: 8px 12px;
+  border-top: 1px solid var(--color-base);
+  text-align: left;
+  color: var(--color-dark-muted);
+  transition: opacity 0.4s ease, transform 0.3s ease, bottom 0.25s ease-in-out;
+  box-shadow: 0 4px 8px var(--color-header-shadow);
+}
+
+.thumbnail__book_title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: -10px;
+}
+
+.thumbnail__book_author {
+  font-size: 0.7rem;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ========================================
+   THUMBNAIL HOVER ANIMATIONS
+   ======================================== */
+.thumbnail:hover .thumbnail__info {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.thumbnail:hover {
+  animation: remove-overflow 2s forwards;
+  opacity: 1;
+}
+
+.thumbnail:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.thumbnail:not(:hover) .thumbnail__info {
+  animation: remove-data 1s forwards;
+}
+
+/* Keyframe Animations */
+@keyframes show-data {
+  50% {
+    transform: translateX(-50%) translateY(-10rem);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-6rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateX(-50%) translateY(-7rem);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10rem);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+#thumbnail__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+#thumbnail__pagination a {
+    text-decoration: none;
+    font-size: 3rem;
+    color: var(--color-dark-muted);
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+#thumbnail__pagination a:hover {
+    background-color: var(--color-base-opposite);
+    color: var(--color-base);
+}
+
+
+/* ========================================
+   STATUS TAGS (Length, Date, Rating)
+   ======================================== */
+.thumbnail__statuses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem; 
+  padding-top: 0.1rem;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.thumbnail__status {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--color-lighter);
+  border-radius: 6px;
+  opacity: 0.5;
+  transform: translateY(4px);
+  transition: all 0.3s ease-in-out;
+  padding-right: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.thumbnail:hover .thumbnail__status {
+  transform: translateY(0);
+}
+
+.thumbnail__status:hover {
+  opacity: 1;
+}
+
+/* Highlight 5-star rating on hover */
+.thumbnail__status--highlight:hover {
+  color: #facc15; 
+}
+
+.thumbnail__status:hover[data-label]::after {
+  opacity: 1;
+}
+
+/* ========================================
+   STATUS TOOLTIPS
+   ======================================== */
+.thumbnail__status[data-label]::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-highlight);
+  color: var(--color-base);
+  padding: 3px 7px;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  opacity: 0;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ========================================
+   SVG ICONS
+   ======================================== */
+.thumbnail__icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  #thumbnail-layout {
+    flex-direction: column;
+  }
+
+  #page-info {
+    max-width: 100%;
+    padding: 4rem 1rem 1rem 1rem;
+    position: inherit;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #filter-button {
+    padding: 0 auto;
+    margin: 0 auto;
+    width: 100%;
+    cursor: default;
+  }
+
+  #filter-button:hover::after {
+    content: "";
+    opacity: 0;
+  }
+
+  .filter-by-rating {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));    
+    opacity: 1;
+    margin: auto;
+    gap: 2rem;
+  }
+
+  #thumbnail-section {
+    max-width: 350px;
+    align-self: center;
+  }
+
+  #thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    list-style: none;
+    padding: 0;
+  }
+
+  .thumbnail__book_cover {
+    display: block;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #page-info {
+    max-width: 30%;
+    padding: 2vw auto;
+    margin: 2vw auto;
+    justify-content: start;
+  }
+
+  #page-title {
+    margin: 2vw 2vw 0 2vw;
+    font-family: var(--font-sorts-mill);
+    font-weight: 800;
+    font-weight: 400;
+    font-size: clamp(3.0rem, 6vw, 6vw);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .filter-by-rating {
+    padding: 1rem 0.2rem;
+    align-items: center;
+    align-content: center;
+  }
+
+  #filter-button {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 1rem 0.2rem;
+    font-size: .8rem;
+    background-color: var(--color-lighter);
+    box-shadow: 0 1px 3px var(--color-header-shadow);
+    cursor: pointer;
+  }
+
+  #filter-button:hover::after {
+    content: "";
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1379px) { 
+  #page-info {
+    padding: 2vw auto;
+    margin: 1vw auto;
+    justify-content: start;
+  }
+
+  #page-title {
+    margin: 2vw auto 1vw auto;
+    font-family: var(--font-sorts-mill);
+    font-weight: 800;
+    font-weight: 400;
+    font-size: clamp(5.0rem, 6vw, 6vw);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .filter-by-rating {
+    padding: 1rem;
+    align-items: center;
+    align-content: center;
+  }
+
+  #filter-button {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 1rem 0.2rem;
+    font-size: .8rem;
+    background-color: var(--color-lighter);
+    box-shadow: 0 1px 3px var(--color-header-shadow);
+    cursor: pointer;
+  }
+
+  #filter-button:hover::after {
+    content: "";
+    opacity: 0;
+  }
+ }

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>『And Then There Were None』  garden</title>
+        
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="/assets/css/global.css">
+
+        <!-- Component CSS -->
+        <link rel="stylesheet" href="/assets/css/header.css">
+        <link rel="stylesheet" href="/assets/css/theme-switch.css">
+        <link rel="stylesheet" href="/assets/css/thumbnails.css">
+        <link rel="stylesheet" href="/assets/css/book.css">
+        <link rel="stylesheet" href="/assets/css/footer.css">
+
+         <!-- Identity -->
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+         
+        <!-- GSAP -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+        <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+      </head>
+     <header>
+    <!-- Name Logo -->
+    <section class="header__logo">
+        <a href="/">
+            <div class="logo__letters">
+                <div class="letter first_initial">M</div>
+                <div class="letter char">'</div>
+                <div class="letter char">s</div>
+                <div class="letter char">&nbsp;</div>
+                <div class="letter second_initial">B</div>
+                <div class="letter char">o</div>
+                <div class="letter char">o</div>
+                <div class="letter char">k</div>
+                <div class="letter char">m</div>
+                <div class="letter char">a</div>
+                <div class="letter char">r</div>
+                <div class="letter char">k</div>
+                <div class="letter char">s</div>
+            </div> 
+        </a>
+    </section>
+    <section class="header__info-container-1">
+        <div id="infoIcon"> info </div>
+        <div id="infoIcon-close"> close </div>
+    </section>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay">
+        <div class="overlay__content">
+            <div class="header__info-container-2"></div>
+            <span class="info__title">INFORMATION</span>
+            <div class="info__stack">
+                <p class="overlay__title">
+                    Stack
+                </p>
+                <p class="overlay__info">
+                    This site was built with the following stack. Each link directs you to free resources where you can read the documentation.
+                </p>
+                <ul class="overlay__stack">
+                    <li>Site Generator: 
+                        <a class="scramble" href="https://www.11ty.dev">11ty</a></li>
+                    <li>Frontend: 
+                            <a class="scramble" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content">HTML</a> and
+                            <a class="scramble" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">JavaScript</a>
+                        </li>
+                    <li>Animations: 
+                        <a class="scramble" href="https://www.w3schools.com/Css/">CSS</a> and 
+                        <a class="scramble" href="https://gsap.com/">GSAP</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="info__resources">
+                <p class="overlay__title">
+                    Coding Resources
+                </p>
+                <ul class="overlay__stack">
+                    <li><a class="scramble" href="https://www.w3schools.com/">W3Schools</a></li>
+                    <li><a class="scramble" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/">freeCodeCamp</a></li>
+                    <li><a class="scramble" href="https://developer.mozilla.org/en-US/">MDN Web Docs </a></li>
+                    <li><a class="scramble" href="www.youtube.com/watch?v=4wD00RT6d-g&list=PLwhCq3ZFGOGgZDg_pnVh15gUfYqWnlWRs">11ty Tutorial for Beginners by Kevin Powell </a></li>
+
+                </ul>
+            </div>
+            <div class="info__about">
+                <p class="overlay__title">
+                    Author
+                </p>
+                <p class="overlay__info">
+                    Created with love (and a bit of anxiety) by <a class="scramble" href="https://github.com/hellogaray/">hellogaray</a>.  
+                    Feel free to use it for personal purposes, contribute improvements, or ask questions via the <a class="scramble" href="https://github.com/hellogaray/bookmarks">GitHub repository</a>.
+                </p> 
+            </div>
+            <div class="info__copyrights">
+                <p class="overlay__title">
+                    Copyright
+                </p>
+                <p class="overlay__info">
+                    © Covers and quotes belong to their respective authors.  
+                    The source code is provided <a class="scramble" href="https://github.com/hellogaray/bookmarks">here</a> under the repository’s license.  
+                    Unauthorized commercial use is prohibited.                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <main>
+        <body data-page="book">
+    <div class="book-layout">
+        <aside class="book__info">
+            <h3 class="book__intro" data-animate>Insights & Highlights from</h3>
+            <h1 class="book__title" data-animate>And Then There Were None</h1>
+            <div class="book__author" data-animate>Agatha Christie</div>
+            <img class="book__cover" data-animate src="/assets/covers/and-then-there-were-none.jpg" alt="Book cover of And Then There Were None">
+            <div class="book__statuses" data-animate>
+                <span class="book__status_rating" data-label="Rated 4 out of 5">
+                        <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg>
+                        <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg>
+                        <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg>
+                        <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
+                        </svg></span>
+            
+                <span class="book__status " data-label="Book Status">
+                    <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M7.833 2c-.507 0-.98.216-1.318.576A1.92 1.92 0 0 0 6 3.89V21a1 1 0 0 0 1.625.78L12 18.28l4.375 3.5A1 1 0 0 0 18 21V3.889c0-.481-.178-.954-.515-1.313A1.808 1.808 0 0 0 16.167 2H7.833Z"/>
+                    </svg>
+                    
+                    Completed
+                    
+                </span>
+
+                <span class="book__status" data-label="Date Read">
+                    <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+                    </svg>
+                    2024/09/30 - 2024/10/04
+                </span>
+
+                <span class="book__status" data-label="Book Length">
+                    <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 1 0 0-2h-2v-2h2a1 1 0 0 0 1-1V4a2 2 0 0 0-2-2h-8v16h5v2H7a1 1 0 1 1 0-2h1V2H6Z"/>
+                    </svg>
+                    250 Pages Long
+                </span>
+
+                <span class="book__status" data-label="E-Book/Physical">
+                    <svg class="book__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4c0-.975.718-2 1.875-2h12.25C19.282 2 20 3.025 20 4v16c0 .975-.718 2-1.875 2H5.875C4.718 22 4 20.975 4 20V4Zm7 13a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Z" clip-rule="evenodd"/>
+                    </svg> 
+                    
+                    Read E-book
+                    
+                </span>
+            </div>
+        </aside>
+
+        
+
+        
+        <script src="/assets/js/loader.js" defer></script>
+
+    </div>
+</body>
+
+    </main>
+                <footer>
+                <div id="theme-button">
+    <div id="theme-switch">
+        Lights On
+        <!-- <svg width="800px" height="800px" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <g>
+            <polygon 
+            id="sunRays" 
+            style="fill:#f3a20f;" 
+            stroke="#121212" 
+            stroke-width="5"
+            points="420,210 375.774,247.857 399.238,301.145 342.926,315.986 340.945,374.184 283.764,363.211 
+                    256.724,414.779 210,380 163.276,414.779 136.236,363.211 79.055,374.184 77.073,315.986 
+                    20.762,301.144 44.226,247.858 0,210 44.226,172.143 20.762,118.855 77.074,104.014 
+                    79.055,45.816 136.236,56.789 163.276,5.221 210,40 256.723,5.221 283.764,56.789 
+                    340.945,45.816 342.927,104.014 399.238,118.856 375.774,172.142"
+            />
+            <circle cx="210" cy="210" r="170" style="fill:white;" stroke="#121212" stroke-width="5" />
+            <circle cx="210" cy="210" r="150" style="fill:#f3a20f;" stroke="#121212" stroke-width="5"  />
+            <circle cx="180" cy="190" r="8" fill="black" />
+            <circle cx="240" cy="190" r="8" fill="black" />
+            <path d="M170,230 Q210,270 250,230" stroke="black" stroke-width="5" fill="transparent" />
+        </g>
+        </svg> -->
+  </div>
+</div>
+
+
+
+                <div class="footer__clock">--:--:--</div>
+            </footer> 
+        <script src="/assets/js/loader.js" defer></script>
+        <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+                });
+            }
+            });
+        }
+        </script>
+    </body>
+</html>

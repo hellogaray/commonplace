@@ -1,0 +1,12 @@
+#theme-button {
+  position: fixed;
+  left: 2vw;
+  bottom: 1vw;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#theme-switch {
+  text-transform: uppercase;
+}
+
