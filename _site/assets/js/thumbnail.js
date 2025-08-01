@@ -182,3 +182,83 @@ if (!isMobile) {
     filterByRating.classList.toggle("active", !tl.reversed());
   });
 };
+
+
+// New Animation Test
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modal-content');
+const modalBody = document.getElementById('modal-body');
+const closeBtn = document.getElementById('modal-close');
+
+document.querySelectorAll('.thumbnail-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const url = this.href;
+    const thumbRect = this.getBoundingClientRect(); // thumbnail position/size
+
+    // Reset modal styles for animation start
+    modal.style.display = 'block';
+    gsap.set(modal, { backgroundColor: 'rgba(0,0,0,0)' });
+    gsap.set(modalContent, {
+      position: 'fixed',
+      top: thumbRect.top,
+      left: thumbRect.left,
+      width: thumbRect.width,
+      height: thumbRect.height,
+      opacity: 0
+    });
+
+    // Animate overlay and modal expanding
+    gsap.to(modal, { backgroundColor: 'rgba(0,0,0,0.8)', duration: 0.3 });
+    gsap.to(modalContent, {
+      top: '50%',
+      left: '50%',
+      xPercent: -50,
+      yPercent: -50,
+      width: '80%',
+      height: '80%',
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+
+    modalBody.innerHTML = '<p>Loading...</p>';
+
+    fetch(url)
+      .then(res => res.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const content = doc.querySelector('main') || doc.body;
+        modalBody.innerHTML = content.innerHTML;
+      })
+      .catch(err => {
+        modalBody.innerHTML = '<p>Error loading page.</p>';
+        console.error(err);
+      });
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  const activeThumb = document.querySelector('.thumbnail-link:focus, .thumbnail-link:hover'); 
+  const thumbRect = activeThumb ? activeThumb.getBoundingClientRect() : { top: window.innerHeight/2, left: window.innerWidth/2, width: 0, height: 0 };
+
+  // Animate modal shrinking back
+  gsap.to(modalContent, {
+    top: thumbRect.top,
+    left: thumbRect.left,
+    width: thumbRect.width,
+    height: thumbRect.height,
+    opacity: 0,
+    duration: 0.5,
+    ease: 'power3.in',
+    onComplete: () => {
+      modal.style.display = 'none';
+      modalBody.innerHTML = '';
+    }
+  });
+
+  // Fade out overlay
+  gsap.to(modal, { backgroundColor: 'var(--color-overlay-background)', duration: 0.3 });
+});

@@ -30,9 +30,10 @@
       {%- for book in books -%}
         <li class="thumbnail" data-rating="{{ book.data.rating }}">
           <div class="thumbnail__content">
-            <a href="{{ book.url }}">
-              <img class="thumbnail__book-cover" src="{{ '/assets/covers/' | url }}{{ book.data.image }}" alt="Book cover of {{ book.data.title }}">
-            </a>
+            <a href="{{ book.url }}" class="thumbnail-link">
+            <img class="thumbnail__book-cover" src="{{ '/assets/covers/' | url }}{{ book.data.image }}" alt="Book cover of {{ book.data.title }}">
+          </a>
+
             <div class="book__spine"></div>
 
             <div class="thumbnail__info">
@@ -86,3 +87,12 @@
     </nav>
   </section>
 </div>
+
+<!-- Modal Overlay -->
+<div id="modal">
+  <div id="modal-content">
+    <button id="modal-close" aria-label="Close modal">✖</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+

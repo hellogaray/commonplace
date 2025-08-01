@@ -347,7 +347,8 @@
   flex-shrink: 0;
 }
 
-/* ========================================
+
+  /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 768px) {
@@ -355,12 +356,20 @@
     flex-direction: column;
   }
 
+  #modal-content {
+    overflow: auto; 
+  }
+
   #page-info {
-    max-width: 100%;
-    padding: 4rem 1rem 1rem 1rem;
+    max-width: 90%;
+    padding: 3rem 0 2rem 0;
     position: inherit;
     margin: 0 auto;
     text-align: center;
+  }
+
+  #page-title {
+    font-size: 4.5rem;
   }
 
   #filter-button {
@@ -405,9 +414,13 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  #modal-content {
+    padding: 2rem;
+  }
+
   #page-info {
     max-width: 30%;
-    padding: 2vw auto;
+    padding: 20vw auto;
     margin: 2vw auto;
     justify-content: start;
   }
@@ -446,6 +459,10 @@
 }
 
 @media (min-width: 1024px) and (max-width: 1379px) { 
+  #modal-content {
+    padding: 2rem;
+  }
+
   #page-info {
     padding: 2vw auto;
     margin: 1vw auto;
