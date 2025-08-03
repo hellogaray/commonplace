@@ -1,6 +1,19 @@
-/* ========================================
-   THUMBNAILS GRID
-   ======================================== */
+/* ==========================================================
+   CONTRIBUTOR GUIDE
+   ==========================================================
+   - Naming: Follow BEM style → block__element--modifier
+   - Use CSS variables (see :root) for colors & spacing
+   - Units: rem for typography/spacing, %/vw only for layout
+   - Keep sections grouped under clear headers
+   - Test changes across all breakpoints (sm, md, lg)
+   - DO NOT rename IDs (#page-info, #thumbnail-grid, etc.)
+   - Mobile-first: start styles at base, override in breakpoints
+========================================================== */
+
+/* ==========================================================
+   THUMBNAILS LAYOUT
+   - Grid of book thumbnails + sticky page info section
+========================================================== */
 #thumbnail-layout {
   display: flex;
   flex-direction: row;
@@ -9,14 +22,15 @@
   margin: 2vw;
 }
 
-/* ========================================
+/* ==========================================================
    PAGE INFO SECTION
-   ======================================== */
-
+   - Sticky on desktop
+   - Centers on smaller screens
+========================================================== */
 #page-info {
   flex: 1 1 25%;
   top: 2vw;
-  max-width: 30%;
+  max-width: 25%;
   padding-right: 1vw;
   position: sticky;
   z-index: 1;
@@ -28,7 +42,7 @@
   font-family: var(--font-sorts-mill);
   font-weight: 800;
   font-weight: 400;
-  font-size: clamp(5.0rem, 6vw, 6vw);
+  font-size: clamp(5rem, 5vw, 5vw);
   line-height: 1;
   text-transform: uppercase;
 }
@@ -50,7 +64,7 @@
 }
   
 #search-bar {
-  margin: 2vw 2vw 0 2vw;
+  margin: 1vw 1vw 0 1vw;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -128,7 +142,7 @@
    ======================================== */
 #thumbnail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   list-style: none;
   padding: 0;
   justify-content: center;
@@ -141,7 +155,7 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background-color: transparent;
-  margin: 2rem;
+  margin: 1.5rem 1rem 0.5rem 1rem;
 }
 
 /* ========================================
@@ -150,7 +164,7 @@
 .thumbnail__book-cover {
   display: block;
   width: 100%;
-  height: 302px;
+  height: 300px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -173,15 +187,16 @@
 
 .thumbnail__book-title {
   font-size: 0.8rem;
+  line-height: 1em;
   font-weight: 600;
   margin: 0;
-  margin-bottom: -10px;
 }
 
 .thumbnail__book-author {
   font-size: 0.7rem;
   margin: 0;
   opacity: 0.85;
+  line-height: 1em;
 }
 
 /* ========================================
@@ -204,44 +219,6 @@
 
 .thumbnail:not(:hover) .thumbnail__info {
   animation: remove-data 1s forwards;
-}
-
-/* Keyframe Animations */
-@keyframes show-data {
-  50% {
-    transform: translateX(-50%) translateY(-10rem);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-6rem);
-  }
-}
-
-@keyframes remove-overflow {
-  to {
-    overflow: initial;
-  }
-}
-
-@keyframes remove-data {
-  0% {
-    transform: translateX(-50%) translateY(-7rem);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10rem);
-  }
-  100% {
-    transform: translateX(-50%) translateY(0.5rem);
-  }
-}
-
-@keyframes show-overflow {
-  0% {
-    overflow: initial;
-    pointer-events: none;
-  }
-  50% {
-    overflow: hidden;
-  }
 }
 
 /* ========================================
@@ -268,9 +245,8 @@
     color: var(--color-base);
 }
 
-
 /* ========================================
-   STATUS TAGS (Length, Date, Rating)
+   STATUS TAGS
    ======================================== */
 .thumbnail__statuses {
   display: flex;
@@ -316,9 +292,7 @@
   opacity: 1;
 }
 
-/* ========================================
-   STATUS TOOLTIPS
-   ======================================== */
+/* Tooltips */
 .thumbnail__status[data-label]::after {
   content: attr(data-label);
   position: absolute;
@@ -348,9 +322,51 @@
 }
 
 
-  /* ========================================
+/* Keyframe Animations */
+@keyframes show-data {
+  50% {
+    transform: translateX(-50%) translateY(-10rem);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-6rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateX(-50%) translateY(-7rem);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10rem);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/* ==========================================================
    RESPONSIVE DESIGN
-   ======================================== */
+   ==========================================================
+   --sm: up to 768px
+   --md: 768px–1023px
+   --lg: 1024px–1379px
+========================================================== */
 @media (max-width: 768px) {
   #thumbnail-layout {
     flex-direction: column;

@@ -6,6 +6,10 @@ const isMobile = window.matchMedia("(max-width: 767px)").matches;
 const thumbnails = gsap.utils.toArray(".thumbnail");
 const filterButtons = document.querySelectorAll(".filter-by-rating");
 const filterByRatingButton = document.getElementById("filter-button");
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modal-content');
+const modalBody = document.getElementById('modal-body');
+const closeBtn = document.getElementById('modal-close');
 
 // ---------- Hover + 3D Tilt ----------
 thumbnails.forEach(el => {
@@ -128,21 +132,21 @@ const grid = document.getElementById("thumbnail-grid");
 
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
-    const selectedRating = button.dataset.rating;
+    // const selectedRating = button.dataset.rating;
 
-    // Remove active from all buttons, add to clicked one
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
+    // // Remove active from all buttons, add to clicked one
+    // filterButtons.forEach(btn => btn.classList.remove('active'));
+    // button.classList.add('active');
 
-    // Capture initial state
-    const state = Flip.getState(thumbnails);
+    // // Capture initial state
+    // const state = Flip.getState(thumbnails);
 
-    // Filter thumbnails
-    thumbnails.forEach(thumb => {
-      const thumbRating = thumb.dataset.rating;
-      const shouldShow = selectedRating === "all" || thumbRating === selectedRating;
-      thumb.style.display = shouldShow ? "inline-flex" : "none";
-    });
+    // // Filter thumbnails
+    // thumbnails.forEach(thumb => {
+    //   const thumbRating = thumb.dataset.rating;
+    //   const shouldShow = selectedRating === "all" || thumbRating === selectedRating;
+    //   thumb.style.display = shouldShow ? "inline-flex" : "none";
+    // });
 
     // Animate to new state
     Flip.from(state, {
@@ -153,9 +157,7 @@ filterButtons.forEach(button => {
       absolute: true,
           onEnter: elements => gsap.fromTo(elements, {opacity: 0, scale: 0}, {opacity: 1, scale: 1, duration: 1}),
     onLeave: elements => gsap.to(elements, {opacity: 0, scale: 0, duration: 1})
-
     });
-
   });
 });
 
@@ -183,13 +185,7 @@ if (!isMobile) {
   });
 };
 
-
-// New Animation Test
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modal-content');
-const modalBody = document.getElementById('modal-body');
-const closeBtn = document.getElementById('modal-close');
-
+// ---------- Modal----------
 document.querySelectorAll('.thumbnail-link').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
