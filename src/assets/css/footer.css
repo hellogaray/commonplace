@@ -20,6 +20,13 @@ footer {
   justify-content: center;
 }
 
+/* ========================================
+   FOOTER CLOCK
+   - Positioned separately from main footer flex content.
+   - Stays fixed on bottom-right corner.
+   - z-index ensures it’s above other elements.
+   - If you need to reposition, change right/bottom values.
+  ======================================== */
 .footer__clock {
   position: fixed;
   bottom: 1rem;
