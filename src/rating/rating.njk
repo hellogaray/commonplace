@@ -1,0 +1,14 @@
+---
+layout: base.njk
+pagination:
+  data: collections.ratingsList
+  size: 1
+  alias: rating
+permalink: "/rating/{{ rating }}/"
+eleventyComputed:
+  pageTitle: "{{ rating }}-Star Books"
+---
+<body data-page="home">
+  {% set books = collections[rating + "StarBooks"] %}
+
+  {% include 'thumbnails.njk' %}

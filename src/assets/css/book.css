@@ -113,12 +113,10 @@
 }
 
 /* Tooltip */
-.book__status[data-label]::after,
-.book__status_rating[data-label]::after {
-  box-shadow: 0 0 8px rgba(255, 255, 200, 0.6);
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #333;
-  color: #fff;
+.book__status:hover[data-label]::after,
+.book__status_rating:hover[data-label]::after {
+  opacity: 1;
+  transform: translate(-50%, -0.5rem);
 }
 
 .book__status:hover::after,

@@ -9,7 +9,6 @@
    - DO NOT rename IDs (#page-info, #thumbnail-grid, etc.)
    - Mobile-first: start styles at base, override in breakpoints
 ========================================================== */
-
 /* ==========================================================
    THUMBNAILS LAYOUT
    - Grid of book thumbnails + sticky page info section
@@ -103,6 +102,8 @@
     transform 0.15s ease;
   display: none;
   opacity: 0; 
+  align-items: center;
+  justify-content: center; 
 }
 
 .filter-by-rating:hover,
@@ -401,10 +402,10 @@
   }
 
   .filter-by-rating {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));    
+    display: flex;
+    flex-direction: row;
+    width: 20%;
     opacity: 1;
-    margin: auto;
     gap: 2rem;
   }
 
@@ -490,7 +491,7 @@
     font-family: var(--font-sorts-mill);
     font-weight: 800;
     font-weight: 400;
-    font-size: clamp(5.0rem, 6vw, 6vw);
+    font-size: clamp(3.0rem, 5vw, 5vw);
     line-height: 1;
     text-transform: uppercase;
   }

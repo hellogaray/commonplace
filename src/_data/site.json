@@ -1,13 +1,12 @@
 {
   "title": "garden",
-  "description": "A quiet space where the books I've read and the quotes that moved me take root and grow.",
+    "description": "A quiet space where the books I've read and the quotes that moved me take root and grow. This is a living archive — part memory, part reflection — where ideas are planted, connected, and allowed to evolve over time. Feel free to wander, explore, and revisit.",
   "user": "M",
   "initial": "M",
   "url": "https://chibi-garden.netlify.app/",
 
-  "_instructions": "⚠️ Do not delete the section labeled 'author-note'. It contains credits.",
+  "_instructions": "⚠️ Do not delete the section below. It contains credits.",
 
-  "author-note": "PLEASE DO NOT DELETE INFORMATION BELOW. THESE ARE THE CREDITS",
   "author": "hellogaray",
   "github": "https://github.com/hellogaray/",
   "repository": "https://github.com/hellogaray/commonplace"
