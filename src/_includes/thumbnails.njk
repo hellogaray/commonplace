@@ -74,16 +74,19 @@
 
     <!-- Pagination -->
     <nav id="thumbnail__pagination" role="navigation" aria-label="Thumbnail pagination">
-      {% if pagination.href.previous %}
-        <a href="{{pagination.href.previous}}" id="thumbnail__pagination-previous" aria-label="Previous thumbnails" title="Previous thumbnails">
-          <span aria-hidden="true">&lt;</span>
-        </a>
-      {% endif %}
-      {% if pagination.href.next %}
-        <a href="{{pagination.href.next}}" id="thumbnail__pagination-next" aria-label="Next thumbnails" title="Next thumbnails">
-          <span aria-hidden="true">&gt;</span>
-        </a>
-      {% endif %}
+{% if (pagination.href.previous or pagination.href.next) and not page.url.startsWith("/rating/") %}
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}" id="thumbnail__pagination-previous" aria-label="Previous thumbnails" title="Previous thumbnails">
+      <span aria-hidden="true">&lt;</span>
+    </a>
+  {% endif %}
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}" id="thumbnail__pagination-next" aria-label="Next thumbnails" title="Next thumbnails">
+      <span aria-hidden="true">&gt;</span>
+    </a>
+  {% endif %}
+{% endif %}
+
     </nav>
   </section>
 </div>

@@ -6,7 +6,7 @@ pagination:
   alias: rating
 permalink: "/rating/{{ rating }}/"
 eleventyComputed:
-  pageTitle: "{{ rating }}-Star Books"
+  title: "{{site.initial}}'s {{ rating }} Star Rated Books"
 ---
 <body data-page="home">
   {% set books = collections[rating + "StarBooks"] %}
