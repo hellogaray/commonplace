@@ -1,0 +1,183 @@
+/* ========================================
+   BOOK-THEMED CMS GLOBAL UI
+======================================== */
+body, .nc-app {
+  font-family: var(--font-inter, Inter), system-ui, sans-serif;
+  background: var(--color-lighter, #f8f7f4) !important;
+  color: var(--dark-color, #333);
+}
+
+/* Card look = same as blockquotes/books */
+.nc-collectionPage-listCard,
+.nc-entryEditor-card,
+.nc-objectCard {
+  background: var(--color-lighter, #faf9f7) !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--color-border, #e3e0da) !important;
+  padding: 1.5rem !important;
+  box-shadow: 0px 4px 16px var(--color-shadow, rgba(0,0,0,0.06)) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.nc-collectionPage-listCard:hover,
+.nc-objectCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 28px rgba(0,0,0,0.15) !important;
+}
+
+/* ========================================
+   HEADER — smoother + literary styling
+======================================== */
+.nc-appHeader {
+  background: rgba(250, 249, 247, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border, #e3e0da);
+}
+
+.nc-appHeader h1 {
+  font-family: var(--font-sorts-mill, Georgia);
+  font-weight: 700;
+  font-size: 1.4rem !important;
+  color: var(--dark-color, #333) !important;
+}
+
+/* ========================================
+   SIDEBAR — bookish look
+======================================== */
+.nc-collectionNav {
+  background: rgba(250, 249, 247, 0.88) !important;
+  border-right: 1px solid var(--color-border, #e3e0da) !important;
+  backdrop-filter: blur(8px);
+}
+
+.nc-collectionNav-link {
+  padding: 0.6rem 0.75rem !important;
+  margin: 0.25rem 0;
+  border-radius: 6px;
+  font-family: var(--font-inter);
+  transition: all 0.25s ease;
+}
+
+.nc-collectionNav-link:hover {
+  background: var(--color-lighter, #f1eee9) !important;
+}
+
+.nc-collectionNav-link-active {
+  background: var(--color-dark-muted, #c6bfb5) !important;
+  color: white !important;
+}
+
+/* ========================================
+   BUTTONS — soft & modern
+======================================== */
+button,
+.nc-button {
+  background: var(--dark-color, #333) !important;
+  color: var(--color-lighter, #fafafa) !important;
+  border-radius: 6px !important;
+  padding: 0.55rem 1rem !important;
+  font-weight: 500;
+  border: none !important;
+  box-shadow: 0 2px 6px var(--color-shadow);
+  transition: all 0.25s ease-in-out;
+}
+
+button:hover,
+.nc-button:hover {
+  background: var(--color-dark-muted, #4b463f) !important;
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 12px rgba(0,0,0,0.15);
+}
+
+.nc-button-danger {
+  background: #b64343 !important;
+}
+
+/* ========================================
+   FORM CONTROLS — book page aesthetic
+======================================== */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select {
+  background: #fffefc !important;
+  border: 1px solid var(--color-border, #ddd6ce) !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 0.75rem !important;
+  font-size: 0.95rem !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+  transition: all 0.25s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-dark-muted, #c6bfb5) !important;
+  box-shadow: 0px 0px 0px 3px rgba(198,191,181,0.35) !important;
+  outline: none !important;
+}
+
+/* ========================================
+   MEDIA LIBRARY
+======================================== */
+.nc-mediaLibrary-image-card {
+  border-radius: 8px !important;
+  background: #fff !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.25s ease;
+}
+
+.nc-mediaLibrary-image-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ========================================
+   INLINE TAGS / BADGES — match statuses
+======================================== */
+.nc-tag {
+  background: var(--color-lighter, #f1eee9) !important;
+  color: var(--dark-color, #333) !important;
+  border-radius: 6px !important;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+}
+
+/* ========================================
+   PREVIEW PANEL — soft “page” look
+======================================== */
+.nc-previewPane {
+  background: #fffefc !important;
+  border-left: 1px solid var(--color-border, #e3e0da) !important;
+  padding: 2rem !important;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.05);
+}
+
+/* ========================================
+   Scrollbars (subtle)
+======================================== */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #c8c3bb;
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: #f3f1ed;
+}
+
+/* ========================================
+   Animation (soft fade)
+======================================== */
+.nc-collectionPage-listCard,
+.nc-objectCard {
+  animation: fadeIn 0.45s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
