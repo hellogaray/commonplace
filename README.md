@@ -14,9 +14,7 @@
   <p>A cozy and stylish digital bookshelf for tracking, reviewing, and showcasing your all your reads.</p>
 </div>
 
-<div align="center">
-  <img src="./screenshots/image01.png" alt="Original Version" width="400">
-</div>
+![Homepage Screenshot](./screenshots/image01.png)
 
 
 
@@ -196,9 +194,6 @@ npx @11ty/eleventy --clean
 ```
 
 ## 🖼️ Screenshots
-
-**Homepage**
-![Homepage Screenshot](./screenshots/image01.png)
 
 **Book Page**
 ![Book Page Screenshot](./screenshots/image03.png)
