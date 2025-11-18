@@ -10,7 +10,7 @@
 
   [![Netlify Status](https://api.netlify.com/api/v1/badges/5800dab1-c3ae-4c79-a3ff-519aed4c1f09/deploy-status)](https://app.netlify.com/projects/chibi-garden/deploys)
 ![GitHub Repo](https://img.shields.io/github/stars/hellogaray/commonplace)
-![License](https://img.shields.io/github/license/hellogaray/commonplace/)
+![License](https://img.shields.io/github/license/hellogaray/commonplace)
   <p>A cozy and stylish digital bookshelf for tracking, reviewing, and showcasing your all your reads.</p>
 </div>
 
